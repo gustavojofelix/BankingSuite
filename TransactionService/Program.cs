@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TransactionService.Data;
 using TransactionService.Repositories;
+using TransactionService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ builder.Services.AddDbContext<TransactionDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<TransactionRepository>();
+builder.Services.AddSingleton<EventPublisher>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
