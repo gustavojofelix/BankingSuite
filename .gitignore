@@ -1,50 +1,55 @@
-## Build results
+# Build Results
 bin/
 obj/
+publish/
 out/
 
-## User-specific files
-*.suo
+# User-specific files
 *.user
+*.suo
 *.userosscache
 *.sln.docstates
 
-## VS Code
-.vscode/
+# Mono Auto Generated Files
+mono_crash.*
 
-## Rider
-.idea/
-
-## ASP.NET logs
-logs/
-*.log
-
-## Docker
-**/Dockerfile
-docker-compose.override.yml
-docker-compose.debug.yml
-.dockerignore
-
-## EF Core Migrations (Optional: comment if you want to track these)
-**/Migrations/
-
-## Secrets and environment configs
-.env
-*.secret.json
-secrets.json
-appsettings.Development.json
-appsettings.*.local.json
-
-## Others
-*.db
-*.db-shm
-*.db-wal
-
-## OS generated
+# OS generated files
 .DS_Store
 Thumbs.db
 
-## NPM/Yarn (if you add frontend or UI containers)
+# Rider
+.idea/
+*.sln.iml
+
+# Visual Studio Code
+.vscode/
+.vs/
+
+# Logs
+*.log
+
+# dotenv environment files (if used)
+.env
+.env.*
+
+# Azure settings
+*.azurePubxml
+*.PublishSettings
+
+# Secrets
+secrets.json
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# NPM Packages (if any frontend or tools used)
 node_modules/
-package-lock.json
-yarn.lock
+
+# Test Results
+TestResults/
+*.coverage
+*.coveragexml
+*.test.json
+
+# Packages folder (if using legacy NuGet format)
+packages/
