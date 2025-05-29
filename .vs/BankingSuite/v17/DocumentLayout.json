@@ -1,0 +1,49 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Projects\\Alvordev\\BankingSuite\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DA93D245-87A3-4040-A1CB-F09B1C6D108D}|Banking.Common\\Banking.Common.csproj|c:\\projects\\alvordev\\bankingsuite\\banking.common\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA93D245-87A3-4040-A1CB-F09B1C6D108D}|Banking.Common\\Banking.Common.csproj|solutionrelative:banking.common\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Projects\\Alvordev\\BankingSuite\\Banking.Common\\Class1.cs",
+              "RelativeDocumentMoniker": "Banking.Common\\Class1.cs",
+              "ToolTip": "C:\\Projects\\Alvordev\\BankingSuite\\Banking.Common\\Class1.cs",
+              "RelativeToolTip": "Banking.Common\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T09:39:22.09Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

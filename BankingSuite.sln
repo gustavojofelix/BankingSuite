@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{7C499B0F-C93B-41CA-AE74-CCCFDA79D9EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{5477EB95-3EA7-44BC-8AF3-B0559C9D6879}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountService", "AccountService\AccountService.csproj", "{F406B108-E4D2-411B-912A-67DEDFD5127A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionService", "TransactionService\TransactionService.csproj", "{78DA46C9-B9ED-46F4-A4A3-B9997513A7D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationService", "NotificationService\NotificationService.csproj", "{5F87B21D-E610-488B-A394-1DA2C62F6DC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.Common", "Banking.Common\Banking.Common.csproj", "{DA93D245-87A3-4040-A1CB-F09B1C6D108D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F406B108-E4D2-411B-912A-67DEDFD5127A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F406B108-E4D2-411B-912A-67DEDFD5127A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F406B108-E4D2-411B-912A-67DEDFD5127A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F406B108-E4D2-411B-912A-67DEDFD5127A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78DA46C9-B9ED-46F4-A4A3-B9997513A7D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78DA46C9-B9ED-46F4-A4A3-B9997513A7D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78DA46C9-B9ED-46F4-A4A3-B9997513A7D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78DA46C9-B9ED-46F4-A4A3-B9997513A7D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F87B21D-E610-488B-A394-1DA2C62F6DC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F87B21D-E610-488B-A394-1DA2C62F6DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F87B21D-E610-488B-A394-1DA2C62F6DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F87B21D-E610-488B-A394-1DA2C62F6DC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA93D245-87A3-4040-A1CB-F09B1C6D108D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA93D245-87A3-4040-A1CB-F09B1C6D108D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA93D245-87A3-4040-A1CB-F09B1C6D108D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA93D245-87A3-4040-A1CB-F09B1C6D108D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F406B108-E4D2-411B-912A-67DEDFD5127A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{78DA46C9-B9ED-46F4-A4A3-B9997513A7D1} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{5F87B21D-E610-488B-A394-1DA2C62F6DC5} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{DA93D245-87A3-4040-A1CB-F09B1C6D108D} = {7C499B0F-C93B-41CA-AE74-CCCFDA79D9EA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1E3BDA3-C072-4F12-92FB-A8102178009E}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+C:\Projects\Alvordev\BankingSuite\Banking.Common\bin\Debug\net9.0\Banking.Common.deps.json
+C:\Projects\Alvordev\BankingSuite\Banking.Common\bin\Debug\net9.0\Banking.Common.dll
+C:\Projects\Alvordev\BankingSuite\Banking.Common\bin\Debug\net9.0\Banking.Common.pdb
+C:\Projects\Alvordev\BankingSuite\Banking.Common\obj\Debug\net9.0\Banking.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Alvordev\BankingSuite\Banking.Common\obj\Debug\net9.0\Banking.Common.AssemblyInfoInputs.cache
+C:\Projects\Alvordev\BankingSuite\Banking.Common\obj\Debug\net9.0\Banking.Common.AssemblyInfo.cs
+C:\Projects\Alvordev\BankingSuite\Banking.Common\obj\Debug\net9.0\Banking.Common.csproj.CoreCompileInputs.cache
+C:\Projects\Alvordev\BankingSuite\Banking.Common\obj\Debug\net9.0\Banking.Common.dll
+C:\Projects\Alvordev\BankingSuite\Banking.Common\obj\Debug\net9.0\refint\Banking.Common.dll
+C:\Projects\Alvordev\BankingSuite\Banking.Common\obj\Debug\net9.0\Banking.Common.pdb
+C:\Projects\Alvordev\BankingSuite\Banking.Common\obj\Debug\net9.0\ref\Banking.Common.dll
