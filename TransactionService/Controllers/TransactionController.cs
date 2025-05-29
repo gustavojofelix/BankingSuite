@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using TransactionService.Events;
+﻿using Banking.Contracts.Events;
+using Microsoft.AspNetCore.Mvc;
+//using TransactionService.Events;
 using TransactionService.Models;
 using TransactionService.Repositories;
+using TransactionService.Services;
 
 namespace TransactionService.Controllers
 {
@@ -10,7 +12,12 @@ namespace TransactionService.Controllers
   public class TransactionController : ControllerBase
   {
     private readonly TransactionRepository _repository;
-    public TransactionController(TransactionRepository repository) => _repository = repository;
+    private readonly EventPublisher _eventPublisher;
+    public TransactionController(TransactionRepository repository, EventPublisher eventPublisher)
+    {
+      _repository = repository;
+      _eventPublisher = eventPublisher;
+    }
 
     [HttpGet]
     public async Task<IActionResult> GetAll() => Ok(await _repository.GetAllAsync());
@@ -30,7 +37,13 @@ namespace TransactionService.Controllers
       var created = await _repository.CreateAsync(request);
 
       // TODO: Publish TransactionCompletedEvent (next section)
-      EventPublisher.PublishTransactionCompleted(request.FromAccountId, request.ToAccountId, request.Amount);
+      //EventPublisher.PublishTransactionCompleted(request.FromAccountId, request.ToAccountId, request.Amount);
+      _eventPublisher.Publish(new TransactionCompleted 
+      { Amount = request.Amount, 
+        FromAccountId = request.FromAccountId, 
+        ToAccountId = request.ToAccountId, 
+        CompletedAt = DateTime.UtcNow 
+      });
 
       return CreatedAtAction(nameof(GetAll), new { id = created.Id }, created);
     }
