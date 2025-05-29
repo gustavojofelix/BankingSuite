@@ -1,27 +1,55 @@
-*.rsuser
-*.suo
+# Build Results
+bin/
+obj/
+publish/
+out/
+
+# User-specific files
 *.user
+*.suo
 *.userosscache
 *.sln.docstates
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Rider
+.idea/
+*.sln.iml
+
+# Visual Studio Code
 .vscode/
 .vs/
 
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
+# Logs
+*.log
 
-# MSTest test Results
-[Tt]est[Rr]esults*/
-[Cc]overage_[Rr]eport/
-[Bb]uild[Ll]og.*
+# dotenv environment files (if used)
+.env
+.env.*
 
+# Azure settings
+*.azurePubxml
+*.PublishSettings
+
+# Secrets
+secrets.json
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# NPM Packages (if any frontend or tools used)
+node_modules/
+
+# Test Results
+TestResults/
+*.coverage
+*.coveragexml
+*.test.json
+
+# Packages folder (if using legacy NuGet format)
+packages/
