@@ -25,4 +25,6 @@
     <ProjectReference Include="..\Banking.Contracts\Banking.Contracts.csproj" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
 </Project>
