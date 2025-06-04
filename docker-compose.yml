@@ -1,8 +1,86 @@
-version: '3.9'
+version: "3.9"
 services:
+  postgres:
+    image: postgres:17
+    container_name: postgres
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq
     ports:
-      - "5672:5672"      # for apps
-      - "15672:15672"    # for management UI
+      - "5672:5672"   # RabbitMQ default (AMQP)
+      - "15672:15672" # RabbitMQ Management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+  accountservice:
+    build:
+      context: .
+      dockerfile: AccountService/Dockerfile
+    container_name: accountservice
+    depends_on:
+      - postgres
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=AccountDb;Username=postgres;Password=postgres
+    ports:
+      - "5011:80"
+
+  transactionservice:
+    build:
+      context: .
+      dockerfile: TransactionService/Dockerfile
+    container_name: transactionservice
+    depends_on:
+      - postgres
+      - rabbitmq
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=TransactionDb;Username=postgres;Password=postgres
+    ports:
+      - "5012:80"
+
+  notificationservice:
+    build:
+      context: .
+      dockerfile: NotificationService/Dockerfile
+    container_name: notificationservice
+    depends_on:
+      - postgres
+      - rabbitmq
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=NotificationDb;Username=postgres;Password=postgres
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=5672
+    ports:
+      - "5013:80"
+
+  apigateway:
+    build:
+      context: .
+      dockerfile: ApiGateway/Dockerfile
+    container_name: apigateway
+    depends_on:
+      - accountservice
+      - transactionservice
+      - notificationservice
+    ports:
+      - "5000:80"
+
+volumes:
+  postgresdata:
