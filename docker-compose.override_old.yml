@@ -1,0 +1,58 @@
+version: "3.9"
+
+services:
+  account-migrator:
+    image: mcr.microsoft.com/dotnet/sdk:9.0
+    container_name: account-migrator
+    volumes:
+      - ./AccountService:/app
+    working_dir: /app
+    depends_on:
+      - postgres
+    entrypoint: >
+      sh -c "
+        echo ' Waiting for PostgreSQL...';
+        sleep 5;
+        export PATH=\"$PATH:/root/.dotnet/tools\" &&
+        dotnet tool install --global dotnet-ef &&
+        export PATH=\"$PATH:/root/.dotnet/tools\" &&
+        dotnet ef database update --context AccountDbContext &&
+        echo ' AccountService migration complete';
+        exit 0;
+      "
+
+  transaction-migrator:
+    image: mcr.microsoft.com/dotnet/sdk:9.0
+    container_name: transaction-migrator
+    volumes:
+      - .:/app
+    working_dir: /app/TransactionService
+    depends_on:
+      - postgres
+    entrypoint: >
+      sh -c "
+        echo ' Waiting for PostgreSQL...';
+        sleep 5;
+        dotnet tool install --global dotnet-ef;
+        export PATH=\"$PATH:/root/.dotnet/tools\";
+        dotnet ef database update --context TransactionDbContext;
+        echo ' TransactionService migration complete';
+      "
+
+  notification-migrator:
+    image: mcr.microsoft.com/dotnet/sdk:9.0
+    container_name: notification-migrator
+    volumes:
+      - .:/app
+    working_dir: /app/NotificationService
+    depends_on:
+      - postgres
+    entrypoint: >
+      sh -c "
+        echo ' Waiting for PostgreSQL...';
+        sleep 5;
+        dotnet tool install --global dotnet-ef;
+        export PATH=\"$PATH:/root/.dotnet/tools\";
+        dotnet ef database update --context NotificationDbContext;
+        echo ' NotificationService migration complete';
+      "
